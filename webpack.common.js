@@ -13,8 +13,6 @@ module.exports = function(options) {
     output: {
       filename: options.filename,
       path: path.resolve(__dirname, options.dirname)
-    //  chunkFilename: '[id].[chunkhash].js', // для файлов за пределами точки входа
-    //  publicPath: '/js/'
     },
     module: {
       rules: [{
@@ -35,28 +33,21 @@ module.exports = function(options) {
         }]
 	    }]
     },
-    //externals: {
-    //  lodash: '_'
-    //},
     plugins: [
       new CleanWebpackPlugin(options.dirname),
       new HtmlWebpackPlugin({
-        title: 'Webpack v3 Demo',
-        //chunks: ['common', 'app']
-        //filename: './[name].html',
+        title: 'Webpack v3 Demo'
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'common',
         //chunks: ['app', 'polyfills']
       }),
       new webpack.DefinePlugin({                  // передает переменные непосредственно в код приложения
-        NODE_ENV: JSON.stringify(options.env)   // usage: if (NODE_ENV === 'development') console.log(...)
+        NODE_ENV: JSON.stringify(options.env)     // usage: if (NODE_ENV === 'development') console.log(...)
       }),
       new webpack.NoEmitOnErrorsPlugin(),
       //new webpack.ProvidePlugin({
-      //  _:     'lodash',
-      //  pluck: 'lodash/collection/pluck',
-      //  join:  ['lodash', 'join']
+      //  _: 'lodash'
       //})
     ]
   }

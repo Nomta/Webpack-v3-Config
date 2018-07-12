@@ -1,6 +1,6 @@
 {
   "name": "webpack-v3-config",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack/webpack.dev.js",

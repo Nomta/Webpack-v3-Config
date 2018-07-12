@@ -11,11 +11,8 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './',
-	port: 9000,
-  //proxy: {
-  //  '*': 'http://localhost:3000'
-  //},
-	hot: true
+	  port: 9000,
+  	hot: true
   },
   module: {
     rules: [{

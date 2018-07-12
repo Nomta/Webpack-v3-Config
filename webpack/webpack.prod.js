@@ -16,8 +16,7 @@ module.exports = merge(common, {
   module: {
     rules: [{
 		  test: /\.js$/,
-      //include: path.resolve(__dirname, 'src'),
-      exclude: /(node_modules|bower_components)/,
+      include: path.resolve(__dirname, 'src'),
       use: {
         loader: 'babel-loader',
         options: {
